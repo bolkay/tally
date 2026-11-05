@@ -1,0 +1,8 @@
+node_modules/
+web/.next/
+web/out/
+web/next-env.d.ts
+*.tsbuildinfo
+api/bin/
+api/obj/
+.DS_Store
