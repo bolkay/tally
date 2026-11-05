@@ -19,6 +19,8 @@ await app.Services.GetRequiredService<Store>().EnsureSchemaAsync(app.Logger, Can
 // ---- Frontend (Next.js static export copied into wwwroot) ----
 app.UseDefaultFiles();
 app.UseStaticFiles();
+// Route only after static files, so "/" serves index.html instead of falling through to the 404 page.
+app.UseRouting();
 
 var web = app.Environment.WebRootFileProvider;
 app.MapGet("/g/{id}", (string id) => ServePage(web, "g.html"));
